@@ -1,0 +1,23 @@
+/* Vitrina Natura: filas donde cada pieza conserva su formato y todas quedan a la misma altura */
+.frow{display:flex;gap:clamp(6px,.8vw,12px);align-items:flex-start}
+.frow+.frow{margin-top:clamp(6px,.8vw,12px)}
+.frow>.tile{flex:var(--r) 1 0;aspect-ratio:var(--r);min-width:0;max-width:100%}
+.frow>.tile.note{aspect-ratio:auto;align-self:stretch;flex:var(--r,1) 1 0}
+.frow.mid{max-width:1500px;margin-inline:auto}
+.tile.wht{background:#fff}
+.tile.wht img{object-fit:contain}
+button.tile{border:0;padding:0;font:inherit;text-align:left;color:inherit;display:block}
+.priv{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:5px 10px;border-radius:20px;border:1px solid rgba(255,255,255,.3);color:#C3D0E4;margin-left:10px}
+.endnote{color:#9DB0CC;font-size:14px;padding-block:clamp(70px,9vw,120px) clamp(40px,5vw,60px);display:flex;gap:18px;align-items:center;flex-wrap:wrap;justify-content:space-between}
+.endnote img{height:28px;width:auto}
+.endnote b{color:#fff}
+@media (max-width:820px){
+  .frow{flex-wrap:wrap}
+  .frow>.tile{flex:var(--r) 1 40%}
+  .frow>.tile.note{flex-basis:100%}
+}
+/* comparador dentro de una fila */
+.frow>.cmp{margin:0;max-width:none;border-radius:clamp(8px,1vw,14px);background:#0E1B34}
+.frow>.cmp img{transition:none}
+.frow>.cmp:hover img{transform:none}
+.hero__date{flex-wrap:wrap;justify-content:flex-end}
